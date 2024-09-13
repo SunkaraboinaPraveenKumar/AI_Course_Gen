@@ -18,12 +18,12 @@ function SelectOption() {
         }))
     }
     return (
-        <div className='mx-10 md:px-20 lg:px-44'>
-            <div className='grid grid-cols-2 gap-10'>
+        <div className='mx-5 md:mx-10 lg:px-20 my-5'>
+            <div className='grid grid-cols-1 sm:grid-cols-2 gap-5 sm:gap-10'>
                 <div>
                     <label className='text-sm'>🎚️ Difficulty Level</label>
                     <Select onValueChange={(value)=>handleInputChange('level',value)} defaultValue={userCourseInput?.level}>
-                        <SelectTrigger className="w-[180px]">
+                        <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
@@ -36,7 +36,7 @@ function SelectOption() {
                 <div>
                     <label className='text-sm'>⌛ Course Duration</label>
                     <Select onValueChange={(value)=>handleInputChange('duration',value)} defaultValue={userCourseInput?.duration}>
-                        <SelectTrigger className="w-[180px]">
+                        <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
@@ -49,7 +49,7 @@ function SelectOption() {
                 <div>
                     <label className='text-sm'>🎥 Add Video</label>
                     <Select onValueChange={(value)=>handleInputChange('displayVideo',value)} defaultValue={userCourseInput?.displayVideo}>
-                        <SelectTrigger className="w-[180px]">
+                        <SelectTrigger className="w-full">
                             <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
@@ -60,11 +60,11 @@ function SelectOption() {
                 </div>
                 <div>
                     <label htmlFor="text-sm">📖 No of Chapters</label>
-                    <Input type='number' onChange={(e)=>handleInputChange('noOfChapters',e.target.value)} defaultValue={userCourseInput?.noOfChapters}/>
+                    <Input type='number' onChange={(e)=>handleInputChange('noOfChapters',e.target.value)} defaultValue={userCourseInput?.noOfChapters} className="w-full"/>
                 </div>
             </div>
         </div>
     )
 }
 
-export default SelectOption
+export default SelectOption;

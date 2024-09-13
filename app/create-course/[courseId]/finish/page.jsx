@@ -26,7 +26,7 @@ function FinishScreen({params}) {
         <h2 className='text-center font-bold text-2xl my-3 text-primary'>Congrats! Your Course is Ready!!</h2>
 
         
-        <CourseBasicInfo course={course} refreshData={()=>console.log()}/>
+        <CourseBasicInfo course={course} edit={false}/>
         <h2 className='mt-3'>Course URL:</h2>
         <h2 className='text-center text-gray-500 p-2 border rounded flex gap-5 items-center'>{process.env.NEXT_PUBLIC_HOST_NAME}/course/{course?.courseId}/start <HiOutlineClipboardDocumentCheck className='cursor-pointer w-8 h-8' onClick={async()=>await navigator.clipboard.writeText(process.env.NEXT_PUBLIC_HOST_NAME+"/course/"+course?.courseId+"/start")}/></h2>
     </div>

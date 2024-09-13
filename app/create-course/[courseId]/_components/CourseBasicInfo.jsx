@@ -42,9 +42,12 @@ function CourseBasicInfo({ course, refreshData, edit = true }) {
           <h2 className='font-bold text-2xl'>{course?.courseOutput?.CourseName} {edit && <EditCourseBasicInfo course={course} refreshData={() => refreshData()} />}</h2>
           <p className='text-sm text-gray-400 mt-3'>{course?.courseOutput?.Description}</p>
           <h2 className='font-medium flex gap-2 mt-2 items-center'><HiOutlinePuzzle />{course?.category}</h2>
-          <Link href={'/course/' + course?.courseId + "/start"}>
-            <Button className='w-full mt-5'>Start</Button>
-          </Link>
+          {
+            !edit &&
+            <Link href={'/course/' + course?.courseId + "/start"}>
+              <Button className='w-full mt-5'>Start</Button>
+            </Link>
+          }
         </div>
         <div className='mt-3 ml-3'>
           <label htmlFor="upload-image">

@@ -19,7 +19,7 @@ function ChapterContent({ chapter, content }) {
             {/* Video */}
             <div className='flex justify-center my-4 md:my-6 items-center'>
                 <YouTube
-                    videoId={chapter?.videoId}
+                    videoId={content?.videoId}
                     opts={options}
                 />
             </div>

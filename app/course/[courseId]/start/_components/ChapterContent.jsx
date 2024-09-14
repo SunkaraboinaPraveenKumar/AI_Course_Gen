@@ -11,6 +11,14 @@ function ChapterContent({ chapter, content }) {
         },
     };
 
+    const mobileOptions = {
+        height: '200',
+        width: '100%',
+        playerVars: {
+            autoplay: 0,
+        },
+    };
+
     return (
         <div className='p-5 md:p-10'>
             <h2 className='font-medium text-xl md:text-2xl'>{chapter?.ChapterName}</h2>
@@ -18,10 +26,18 @@ function ChapterContent({ chapter, content }) {
 
             {/* Video */}
             <div className='flex justify-center my-4 md:my-6 items-center'>
-                <YouTube
-                    videoId={content?.videoId}
-                    opts={options}
-                />
+                <div className='block md:hidden'>
+                    <YouTube
+                        videoId={content?.videoId}
+                        opts={mobileOptions}
+                    />
+                </div>
+                <div className='hidden md:block'>
+                    <YouTube
+                        videoId={content?.videoId}
+                        opts={options}
+                    />
+                </div>
             </div>
 
             {/* Content */}

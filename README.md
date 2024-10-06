@@ -2,6 +2,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
+LIVE ON (https://ai-course-gen-prav.vercel.app/)
+
 First, run the development server:
 
 ```bash
